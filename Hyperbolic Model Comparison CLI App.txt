@@ -1,0 +1,60 @@
+Hyperbolic Model Comparison CLI: Approach & Key Considerations
+
+Problem Statement
+When developing AI applications, choosing the right LLM is crucial but challenging. Developers need to balance performance, accuracy, and cost while ensuring reliable production deployment. Our CLI tool provides data-driven comparisons between Hyperbolic's hosted models to facilitate informed decision-making.
+
+Technical Approach:
+
+1. Performance Measurement
+- Implemented asynchronous streaming to capture real-time performance metrics
+- Measured three critical metrics:
+  - Time to first token (responsiveness)
+  - Total latency (completion time)
+  - Tokens per second (throughput)
+- Used streaming responses for accurate token-by-token timing
+
+2. Accuracy Evaluation
+- Developed a comprehensive testing framework using:
+  - MMLU-style knowledge questions
+  - HumanEval coding challenges
+  - Consistency checks across multiple runs
+- Implemented keyword-based response evaluation
+- Calculated similarity scores between multiple runs for consistency measurement
+
+3. Cost Analysis
+- Integrated Hyperbolic's pricing data for all models
+- Calculated key financial metrics:
+  - Cost per 1K tokens
+  - Standard workload costs (1M tokens)
+  - Cost-performance ratio for optimization
+
+Key Design Considerations:
+
+1. Reliability
+   - Comprehensive error handling throughout
+   - Fallback mechanisms for failed API calls
+   - Validation of responses and calculations
+
+2. Usability
+   - Clear, formatted output using Rich library
+   - Side-by-side model comparison
+   - Easy-to-understand metrics presentation
+
+3. Extensibility
+   - Modular code structure
+   - Configurable test prompts
+   - Flexible pricing updates
+
+ Benefits of Hyperbolic Platform
+- Unified API access to multiple models
+- Consistent performance measurement
+- Transparent pricing structure
+- Reliable model hosting
+
+ Future Enhancements
+- Custom benchmark creation
+- Automated model selection based on requirements
+- CI/CD pipeline integration
+- Extended accuracy metrics
+
+This tool enables developers to make data-driven decisions when selecting LLMs, optimizing for their specific use cases and requirements while maintaining cost efficiency.
